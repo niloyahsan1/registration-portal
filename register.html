@@ -18,30 +18,41 @@
   </div>
 
   <div class="form-container" id="formSection">
-    <h2 class="title">Registration Form</h2>
-    <p class="subtitle">Fill in your details below to register</p>
+    <div class="form-header-badge">
+      <span class="event-pill">Scriptwriting Workshop</span>
+      <h2 class="title">Workshop Registration</h2>
+      <p class="subtitle">Please fill out the form carefully with your accurate details</p>
+    </div>
 
     <form id="googleForm">
+      <div class="form-section-title">
+        <span>1</span> Personal Information
+      </div>
+
       <div class="form-grid-2">
         <div class="form-group">
           <label for="name">Full Name</label>
-          <input type="text" id="name" placeholder="Your full name" required />
+          <input type="text" id="name" placeholder="e.g. John Doe" required />
         </div>
 
         <div class="form-group">
           <label for="studentId">Student ID</label>
-          <input type="text" id="studentId" placeholder="Your student ID" required />
+          <input type="text" id="studentId" placeholder="e.g. 23101234" required />
         </div>
       </div>
 
       <div class="form-group">
         <label for="email">Gsuite Email</label>
-        <input type="email" id="email" placeholder="your.name@g.bracu.ac.bd" required />
+        <input type="email" id="email" placeholder="e.g. john.doe@g.bracu.ac.bd" required />
+      </div>
+
+      <div class="form-section-title">
+        <span>2</span> Workshop Questionnaire
       </div>
 
       <div class="form-group">
         <label for="q1">1. Why do you want to attend the workshop?</label>
-        <textarea id="q1" placeholder="Write a short answer..." rows="2" required></textarea>
+        <textarea id="q1" placeholder="Write a brief answer..." rows="2" required></textarea>
       </div>
 
       <div class="form-group">
@@ -51,23 +62,35 @@
 
       <div class="form-group">
         <label for="q3">3. Give a small synopsis of the story you have written (if any).</label>
-        <textarea id="q3" placeholder="Write your short synopsis..." rows="2"></textarea>
+        <textarea id="q3" placeholder="Write your short synopsis (optional)..." rows="2"></textarea>
+      </div>
+
+      <div class="form-section-title">
+        <span>3</span> Payment Verification
+      </div>
+
+      <div class="payment-card">
+        <div class="payment-icon">💵</div>
+        <div class="payment-info">
+          <strong>bKash Send Money: 01821833200</strong>
+          <p>Registration Fee: <strong>BDT 100</strong> • Mention your name in reference</p>
+        </div>
       </div>
 
       <div class="form-group">
-        <label for="bkashId"><strong>bKash: 01821833200 (Send Money)</strong><br><span style="font-size:0.85rem; color:var(--text-muted); font-weight:normal;">Mention your name in reference</span><br>Transaction ID (TrxID)</label>
-        <input type="text" id="bkashId" placeholder="Enter Bkash TrxID" required />
+        <label for="bkashId">bKash Transaction ID (TrxID)</label>
+        <input type="text" id="bkashId" placeholder="e.g. 9J87AKL12" required />
       </div>
 
       <div class="form-group">
-        <label>Have you checked all information before submission?</label>
+        <label>Have you verified all information before submission?</label>
         <div class="radio-group">
-          <label><input type="radio" name="check" value="Yes" required /> Yes</label>
+          <label><input type="radio" name="check" value="Yes" required /> Yes, details verified</label>
           <label><input type="radio" name="check" value="No" /> No</label>
         </div>
       </div>
 
-      <button type="submit" class="btn-primary">Complete Registration</button>
+      <button type="submit" class="btn-primary">Complete & Generate Ticket</button>
     </form>
 
     <p id="msg" class="note"></p>
@@ -75,26 +98,34 @@
 
   <!-- Thank You Section -->
   <div class="form-container" id="thankYouSection" style="display:none;">
-    <h2 class="title">✅ Registration Successful!</h2>
-    <p class="subtitle">Thank you for registering, <span id="userName"></span> 🎉</p>
-    <p class="subtitle">Your entry ticket is ready below:</p>
+    <div class="form-header-badge">
+      <span class="event-pill success-pill">Registration Confirmed</span>
+      <h2 class="title">✅ Registration Successful!</h2>
+      <p class="subtitle">Thank you, <span id="userName"></span>! Your entry ticket is generated below:</p>
+    </div>
 
     <div id="ticket" class="ticket">
-      <h3>🎟️ Workshop Entry Ticket</h3>
-      <p><strong>Name:</strong> <span id="ticketName"></span></p>
-      <p><strong>ID:</strong> <span id="ticketId"></span></p>
-      <p><strong>TrxID:</strong> <span id="ticketBkash"></span></p>
-      <p><strong>Date:</strong> November 10, 2025</p>
-      <p><strong>Time:</strong> 5:00 - 8:00 PM</p>
-      <p><strong>Venue:</strong> Club Activity Room 4</p>
+      <div class="ticket-header">
+        <div class="ticket-brand">BUFC Workshop</div>
+        <div class="ticket-badge">Official Entry Pass</div>
+      </div>
+      <h3>🎟️ Scriptwriting Workshop Entry Pass</h3>
+      <div class="ticket-details-grid">
+        <p><strong>Name:</strong> <span id="ticketName"></span></p>
+        <p><strong>Student ID:</strong> <span id="ticketId"></span></p>
+        <p><strong>TrxID:</strong> <span id="ticketBkash"></span></p>
+        <p><strong>Date:</strong> November 10, 2025</p>
+        <p><strong>Time:</strong> 05:30 PM</p>
+        <p><strong>Venue:</strong> Club Activity Room 4</p>
+      </div>
     </div>
 
     <button class="btn-primary" id="downloadBtn">Download Ticket (JPG)</button>
-    <a href="index.html" class="btn-primary" style="background:#43a047;">Back to Home</a>
+    <a href="index.html" class="btn-primary" style="background:#43a047; margin-top:12px;">Back to Home</a>
   </div>
 
   <footer>
-    <p>© 2025 BUFC Workshop· Built for Workshop Registration</p>
+    <p>© 2026 Registration Portal · Built for Event Registration</p> 
   </footer>
 
   <script src="config.js"></script>

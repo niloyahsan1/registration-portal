@@ -528,6 +528,100 @@ body.form-body {
 /* =========================================================
    FORM ELEMENTS (WIDE 2-COLUMN GRID INSIDE FORM)
 ========================================================= */
+/* =========================================================
+   FORM ELEMENTS & DESIGN ENHANCEMENTS
+========================================================= */
+.form-header-badge {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.event-pill {
+    display: inline-block;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 700;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    border: 1px solid var(--primary-border);
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.success-pill {
+    background: #dcfce7;
+    color: #15803d;
+    border-color: #86efac;
+}
+
+.form-section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 28px 0 16px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+}
+
+.form-section-title span {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.payment-card {
+    background: var(--primary-light);
+    border: 1px solid var(--primary-border);
+    border-radius: var(--radius-md);
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 16px;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.payment-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
+}
+
+.payment-icon {
+    font-size: 1.8rem;
+    background: var(--bg-surface);
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--primary-border);
+}
+
+.payment-info strong {
+    display: block;
+    color: var(--primary);
+    font-size: 0.98rem;
+}
+
+.payment-info p {
+    color: var(--text-secondary);
+    font-size: 0.88rem;
+    margin: 2px 0 0 0;
+}
+
 form {
     width: 100%;
 }
@@ -539,7 +633,7 @@ form {
 }
 
 .form-group {
-    margin-bottom: 6px;
+    margin-bottom: 10px;
 }
 
 form label {
@@ -565,7 +659,7 @@ textarea {
     border-radius: var(--radius-sm);
     font-size: 0.95rem;
     color: var(--text-primary);
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    transition: all 0.2s ease;
 }
 
 /* Non-intrusive, clear placeholder text */
@@ -598,7 +692,8 @@ form input[type="email"]:focus,
 textarea:focus {
     border-color: var(--primary);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(29, 104, 189, 0.12);
+    box-shadow: 0 0 0 3px rgba(29, 104, 189, 0.15);
+    background: #ffffff;
 }
 
 textarea {
@@ -647,37 +742,77 @@ textarea {
 }
 
 /* =========================================================
-   TICKET PREVIEW & DOWNLOAD
+   TICKET PREVIEW & DOWNLOAD (PASS DESIGN)
 ========================================================= */
 .ticket {
     background: var(--bg-surface);
     border: 2px dashed var(--primary-border);
     border-radius: var(--radius-md);
-    padding: 28px;
+    padding: 32px;
     margin: 28px 0;
     text-align: left;
+    position: relative;
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.05);
+}
+
+.ticket-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+}
+
+.ticket-brand {
+    font-weight: 800;
+    font-size: 1.1rem;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+}
+
+.ticket-badge {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 0.76rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 9999px;
+    border: 1px solid var(--primary-border);
+    text-transform: uppercase;
 }
 
 .ticket h3 {
     color: var(--primary);
     font-size: 1.25rem;
     font-weight: 800;
-    margin-bottom: 18px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border);
+    margin-bottom: 20px;
     letter-spacing: -0.02em;
 }
 
-.ticket p {
-    color: var(--text-secondary);
-    font-size: 0.98rem;
-    margin-bottom: 10px;
+.ticket-details-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
 }
 
-.ticket p strong {
+.ticket-details-grid p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+    background: var(--bg-surface-subtle);
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border);
+}
+
+.ticket-details-grid p strong {
     color: var(--text-primary);
-    display: inline-block;
-    width: 100px;
+    display: block;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 2px;
 }
 
 /* =========================================================
