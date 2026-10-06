@@ -5,94 +5,113 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BUFC Workshop</title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body class="event-body">
-  <div class="event-card">
-    <div class="banner-section">
-      <div class="event-date">Nov 10, 2026</div>
-      <img src="assets/poster.jpg" alt="Workshop Banner" class="banner-img" />
+  <header class="app-header">
+    <div class="header-brand">
+      <span class="header-title">Registration Portal</span>
+    </div>
+  </header>
+
+  <main class="main-layout">
+    <!-- Left Column: Hero Card & Action CTA -->
+    <div class="hero-column">
+      <div class="event-card hero-card">
+        <div class="banner-section">
+          <div class="event-date">Nov 10, 2026</div>
+          <img src="assets/poster.jpg" alt="Workshop Banner" class="banner-img" />
+        </div>
+
+        <h1 class="event-title">Scriptwriting Workshop with<br>Ayman Asib Shadhin</h1>
+        <p class="event-subtitle">Organized by BRAC University Film Club</p>
+
+        <div class="event-info">
+          <div class="info-item"><span>📅 November 10, 2026</span></div>
+          <div class="info-item"><span>🕗 05:30 PM</span></div>
+          <div class="info-item"><span>💵 Fee: BDT 100</span></div>
+        </div>
+
+        <div id="countdown" class="countdown-grid"></div>
+        <h3 id="countdownLabel" class="countdown-label"></h3>
+
+        <div id="actionBtnArea">
+          <a href="register.html" id="regBtn" class="btn-register">Register Now</a>
+          <a id="closedBtn" class="btn-closed" style="display:none;">Registration is Closed!</a>
+        </div>
+      </div>
     </div>
 
-    <h1 class="event-title">Scriptwriting Workshop with<br>Ayman Asib Shadhin</h1>
-    <p class="event-subtitle">Organized by BRAC University Film Club</p>
+    <!-- Right Column: Workshop Details & Info -->
+    <div class="details-column">
+      <div class="event-card details-card">
+        <section class="workshop-details">
+          <h2>Workshop Details</h2>
 
-    <div class="event-info">
-      <div class="info-item">
-        <span>📅 November 10, 2026</span>
-      </div>
-      <div class="info-item">
-        <span>🕗 05:30 PM</span>
-      </div>
-      <div class="info-item">
-        <span>💵 Fee: BDT 100</span>
+          <div class="detail-block">
+            <p class="description-text">
+              BRAC University Film Club is hosting an exclusive Scriptwriting Workshop featuring <strong>Ayman Asib
+                Shadhin</strong>, renowned scriptwriter of <em>Utshob</em>, <em>Kaiser</em>, and <em>Mainkar
+                Chipay</em>. The session is designed to enhance students' understanding of storytelling, screenplay
+              structure, and creative writing for film and television.
+            </p>
+            <p class="description-text">
+              This workshop is open to all university students interested in film, literature, or creative writing.
+            </p>
+          </div>
+
+          <div class="detail-block">
+            <h3>🎯 Objectives</h3>
+            <ul class="styled-list">
+              <li>To introduce participants to the fundamentals of professional scriptwriting.</li>
+              <li>To explore the creative process behind acclaimed Bangladeshi productions.</li>
+              <li>To encourage student engagement in creative writing and film development.</li>
+            </ul>
+          </div>
+
+          <div class="detail-block">
+            <h3>📑 Session Outline</h3>
+            <ul class="styled-list">
+              <li>Comprehensive discussion on developing a script from concept to final draft.</li>
+              <li>Exploration of different genres and narrative structures.</li>
+              <li>Interactive Q&A session with the guest speaker.</li>
+            </ul>
+          </div>
+
+          <div class="info-grid">
+            <div class="info-card-mini">
+              <span class="mini-label">Date & Time</span>
+              <span class="mini-val">Nov 10, 2026 • 5:00 - 8:00 PM</span>
+            </div>
+            <div class="info-card-mini">
+              <span class="mini-label">Venue</span>
+              <span class="mini-val">Club Activity Room 4</span>
+            </div>
+            <div class="info-card-mini">
+              <span class="mini-label">bKash (Send Money)</span>
+              <span class="mini-val">01821833200</span>
+            </div>
+            <div class="info-card-mini">
+              <span class="mini-label">Fee</span>
+              <span class="mini-val">BDT 100</span>
+            </div>
+          </div>
+
+          <div class="bonus-section">
+            <h3>🎁 Bonus</h3>
+            <p>All registered participants will receive an official <strong>Certificate of Participation</strong>.</p>
+          </div>
+        </section>
       </div>
     </div>
-
-    <div id="countdown" class="countdown-grid"></div>
-    <h3 id="countdownLabel" class="countdown-label"></h3>
-
-    <div id="actionBtnArea">
-      <a href="register.html" id="regBtn" class="btn-register">Register Now</a>
-      <a id="closedBtn" class="btn-closed" style="display:none;">Registration is Closed!</a>
-    </div>
-
-    <section class="workshop-details">
-      <h2>Workshop Details</h2>
-
-      <ul class="session-list">
-        <li>
-          BRAC University Film Club hosting a Scriptwriting Workshop featuring Ayman Asib Shadhin, the renowned
-          scriptwriter of Utshob, Kaiser and Mainkar Chipay. The session is designed to enhance students' understanding
-          of storytelling, screenplay structure and creative writing for film and television. <br><br>
-          This workshop will be open to all BRAC University students who are interested in film, literature or creative
-          writing, regardless of departmental affiliation. <br> <br>
-
-          <strong>Objectives:</strong> <br>
-          <strong>1. </strong>To introduce participants to the fundamentals of professional scriptwriting. <br>
-          <strong>2. </strong>To explore the creative process behind acclaimed Bangladeshi productions. <br>
-          <strong>3. </strong>To encourage student engagement in creative writing and film development. <br> <br>
-
-          <strong>Session Outline:</strong> <br>
-          <strong>1. </strong>Comprehensive discussion on developing a script, from concept to final draft. <br>
-          <strong>2. </strong>Exploration of different genres and their unique narrative structures. <br>
-          <strong>3. </strong>To encourage student engagement in creative writing and film development. <br>
-          <strong>4. </strong>Interactive Q&A session with the guest speaker. <br><br>
-
-          We believe this workshop will offer students a valuable opportunity to learn from one of Bangladesh's most
-          respected screenwriters and gain insights into the art of scriptwriting and cinematic storytelling.
-        </li>
-      </ul>
-
-      <ul class="session-list">
-        <li>
-          <strong>Date:</strong> November 10 <br>
-          <strong>Time:</strong> 5:00 PM - 8:00 PM <br>
-          <strong>Venue:</strong> Club Activity Room 4 <br>
-          <strong>Organized by:</strong> BRAC University Film Club <br>
-          <strong>Registration Fee:</strong> BDT 100 <br>
-          <strong>Bkash Number:</strong> 01821833200
-          <!-- <p>🔗 <strong>Event Page:</strong> <a href="https://www.facebook.com/share/1D5hWdJ5ZP/" target="_blank">Facebook Event Link</a></p> -->
-        </li>
-      </ul>
-
-
-      <div class="bonus-section">
-        <h3>🎁 Bonus</h3>
-        <ul>
-          <li>All registered participants will receive a <strong>Certificate of Participation</strong>.</li>
-          <!-- <li>Engage in fun, reflective group activities and meet like-minded peers.</li> -->
-        </ul>
-      </div>
-
-    </section>
-  </div>
+  </main>
 
   <footer>
-    <p>© 2025 BUFC Workshop· Built for Workshop Registration</p>
+    <p>© 2026 Registration Portal · Built for Event Registration</p>
   </footer>
 
   <script src="config.js"></script>
