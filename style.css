@@ -113,7 +113,7 @@ body.form-body {
 
 .main-layout {
     display: grid;
-    grid-template-columns: 480px 1fr;
+    grid-template-columns: 520px 1fr;
     gap: 40px;
     width: 100%;
     max-width: 1560px;
@@ -140,6 +140,11 @@ body.form-body {
     border-radius: var(--radius-lg);
     padding: 36px;
     width: 100%;
+    transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.event-card:hover {
+    border-color: var(--border-hover);
 }
 
 .hero-card {
@@ -159,6 +164,11 @@ body.form-body {
     width: 100%;
     max-width: 1080px;
     margin: 12px 0 30px 0;
+    transition: border-color 0.25s ease;
+}
+
+.form-container:hover {
+    border-color: var(--border-hover);
 }
 
 /* =========================================================
@@ -178,13 +188,18 @@ body.form-body {
     object-fit: cover;
     display: block;
     border-radius: var(--radius-md);
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.banner-section:hover .banner-img {
+    transform: scale(1.03);
 }
 
 .event-date {
     position: absolute;
     top: 14px;
     left: 14px;
-    background: #ffffff;
+    background: var(--bg-surface);
     color: var(--primary);
     font-size: 0.82rem;
     font-weight: 700;
@@ -192,6 +207,13 @@ body.form-body {
     border-radius: 9999px;
     border: 1px solid var(--border);
     letter-spacing: 0.2px;
+    transition: all 0.2s ease;
+    z-index: 2;
+}
+
+.banner-section:hover .event-date {
+    border-color: var(--primary-border);
+    transform: translateY(-1px);
 }
 
 .event-title {
@@ -230,33 +252,42 @@ body.form-body {
 }
 
 /* =========================================================
-   EVENT CHIPS & COUNTDOWN
+   EVENT CHIPS & COUNTDOWN (SINGLE ROW GRID)
 ========================================================= */
 .event-info {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
     margin-bottom: 28px;
+    width: 100%;
 }
 
 .info-item {
     background: var(--bg-surface-subtle);
     color: var(--text-primary);
     border: 1px solid var(--border);
-    padding: 8px 16px;
-    border-radius: 9999px;
-    font-size: 0.88rem;
+    padding: 10px 8px;
+    border-radius: var(--radius-sm);
+    font-size: 0.82rem;
     font-weight: 600;
-    display: inline-flex;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 6px;
+    text-align: center;
+    white-space: nowrap;
     transition: all 0.2s ease;
 }
 
+.info-item span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
 .info-item:hover {
-    border-color: var(--primary-border);
+    border-color: var(--primary);
     background: var(--primary-light);
-    color: var(--primary);
+    color: var(--primary-hover);
+    transform: translateY(-2px);
 }
 
 .countdown-grid {
@@ -272,6 +303,14 @@ body.form-body {
     border-radius: var(--radius-sm);
     padding: 12px 6px;
     text-align: center;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.count-box:hover {
+    border-color: var(--primary-border);
+    background: var(--primary-light);
+    transform: translateY(-3px);
 }
 
 .count-box span {
@@ -281,6 +320,11 @@ body.form-body {
     color: var(--primary);
     line-height: 1.1;
     font-feature-settings: "tnum";
+    transition: color 0.2s ease;
+}
+
+.count-box:hover span {
+    color: var(--primary-hover);
 }
 
 .count-box small {
@@ -319,13 +363,13 @@ body.form-body {
     cursor: pointer;
     text-align: center;
     letter-spacing: -0.01em;
-    transition: background-color 0.2s ease, transform 0.15s ease;
+    transition: all 0.2s ease;
 }
 
 .btn-register:hover,
 .btn-primary:hover {
     background: var(--primary-hover);
-    transform: translateY(-1px);
+    transform: translateY(-2px);
 }
 
 .btn-register:active,
@@ -391,10 +435,10 @@ body.form-body {
 
 .styled-list li {
     position: relative;
-    padding-left: 22px;
+    padding: 4px 0 4px 22px;
     color: var(--text-secondary);
     font-size: 0.95rem;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     line-height: 1.6;
 }
 
@@ -423,6 +467,14 @@ body.form-body {
     padding: 16px 20px;
     display: flex;
     flex-direction: column;
+    transition: all 0.2s ease;
+    cursor: default;
+}
+
+.info-card-mini:hover {
+    border-color: var(--primary-border);
+    background: var(--primary-light);
+    transform: translateY(-2px);
 }
 
 .mini-label {
@@ -432,6 +484,11 @@ body.form-body {
     text-transform: uppercase;
     letter-spacing: 0.5px;
     margin-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+.info-card-mini:hover .mini-label {
+    color: var(--primary);
 }
 
 .mini-val {
@@ -447,6 +504,12 @@ body.form-body {
     padding: 20px 24px;
     margin-top: 20px;
     text-align: left;
+    transition: all 0.25s ease;
+}
+
+.bonus-section:hover {
+    border-color: var(--primary);
+    transform: translateY(-2px);
 }
 
 .bonus-section h3 {
