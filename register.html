@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
+
 <body class="form-body">
   <div class="form-container" id="formSection">
     <h2 class="title">Registration Form</h2>
@@ -32,7 +34,8 @@
       <label for="q3">3. Give a small synopsis of the story you have written (if any).</label>
       <textarea id="q3" placeholder="Write your short synopsis..." rows="2"></textarea>
 
-      <label for="bkashId"><strong>Bkash: 01821833200 (send money)</strong><br><strong>** Mention Your Name in the Reference **</strong><br>Transaction ID</label>
+      <label for="bkashId"><strong>Bkash: 01821833200 (send money)</strong><br><strong>** Mention Your Name in the
+          Reference **</strong><br>Transaction ID</label>
       <input type="text" id="bkashId" placeholder="Bkash TrxID" required />
 
       <label>Have you checked all information before submission?</label>
@@ -88,11 +91,11 @@
       const q3 = document.getElementById("q3").value.trim();
       const bkashId = document.getElementById("bkashId").value.trim();
       const check = document.querySelector('input[name="check"]:checked')?.value || "";
-      
+
       const googleSheetScript = "https://corsproxy.io/?" + encodeURIComponent("https://script.google.com/macros/s/AKfycbwU6CyFjh6T5116ChaDu6X2vVw6g4JUo_irVVayrxJE-XOV25kL9Wz9ocAvKT2s_7rk/exec");
-      
+
       const data = { name, studentId, email, q1, q2, q3, bkashId, check };
-  
+
       msg.textContent = "Submitting...";
       msg.style.color = "#555";
 
@@ -138,4 +141,5 @@
     });
   </script>
 </body>
+
 </html>
