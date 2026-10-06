@@ -22,35 +22,52 @@
     <p class="subtitle">Fill in your details below to register</p>
 
     <form id="googleForm">
-      <label for="name">Full Name</label>
-      <input type="text" id="name" placeholder="Your full name" required />
+      <div class="form-grid-2">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" placeholder="Your full name" required />
+        </div>
 
-      <label for="studentId">Student ID</label>
-      <input type="text" id="studentId" placeholder="Your student ID" required />
-
-      <label for="email">Gsuite Email</label>
-      <input type="email" id="email" placeholder="your.name@g.bracu.ac.bd" required />
-
-      <label for="q1">1. Why do you want to attend the workshop?</label>
-      <textarea id="q1" placeholder="Write a short answer..." rows="2" required></textarea>
-
-      <label for="q2">2. Do you have any previous experience in filmmaking or script writing?</label>
-      <textarea id="q2" placeholder="Write briefly..." rows="2" required></textarea>
-
-      <label for="q3">3. Give a small synopsis of the story you have written (if any).</label>
-      <textarea id="q3" placeholder="Write your short synopsis..." rows="2"></textarea>
-
-      <label for="bkashId"><strong>Bkash: 01821833200 (send money)</strong><br><strong>** Mention Your Name in the
-          Reference **</strong><br>Transaction ID</label>
-      <input type="text" id="bkashId" placeholder="Bkash TrxID" required />
-
-      <label>Have you checked all information before submission?</label>
-      <div class="radio-group">
-        <label><input type="radio" name="check" value="Yes" required /> Yes</label>
-        <label><input type="radio" name="check" value="No" /> No</label>
+        <div class="form-group">
+          <label for="studentId">Student ID</label>
+          <input type="text" id="studentId" placeholder="Your student ID" required />
+        </div>
       </div>
 
-      <button type="submit" class="btn-primary">Register</button>
+      <div class="form-group">
+        <label for="email">Gsuite Email</label>
+        <input type="email" id="email" placeholder="your.name@g.bracu.ac.bd" required />
+      </div>
+
+      <div class="form-group">
+        <label for="q1">1. Why do you want to attend the workshop?</label>
+        <textarea id="q1" placeholder="Write a short answer..." rows="2" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="q2">2. Do you have any previous experience in filmmaking or script writing?</label>
+        <textarea id="q2" placeholder="Write briefly..." rows="2" required></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="q3">3. Give a small synopsis of the story you have written (if any).</label>
+        <textarea id="q3" placeholder="Write your short synopsis..." rows="2"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="bkashId"><strong>bKash: 01821833200 (Send Money)</strong><br><span style="font-size:0.85rem; color:var(--text-muted); font-weight:normal;">Mention your name in reference</span><br>Transaction ID (TrxID)</label>
+        <input type="text" id="bkashId" placeholder="Enter Bkash TrxID" required />
+      </div>
+
+      <div class="form-group">
+        <label>Have you checked all information before submission?</label>
+        <div class="radio-group">
+          <label><input type="radio" name="check" value="Yes" required /> Yes</label>
+          <label><input type="radio" name="check" value="No" /> No</label>
+        </div>
+      </div>
+
+      <button type="submit" class="btn-primary">Complete Registration</button>
     </form>
 
     <p id="msg" class="note"></p>
