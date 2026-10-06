@@ -12,6 +12,10 @@
 </head>
 
 <body class="form-body">
+  <div class="nav-bar">
+    <a href="index.html" class="btn-back">← Back to Home</a>
+  </div>
+
   <div class="form-container" id="formSection">
     <h2 class="title">Registration Form</h2>
     <p class="subtitle">Fill in your details below to register</p>
@@ -75,14 +79,30 @@
     <p>© 2025 BUFC Workshop· Built for Workshop Registration</p>
   </footer>
 
+  <script src="config.js"></script>
   <script>
     const form = document.getElementById("googleForm");
     const msg = document.getElementById("msg");
     const thankYouSection = document.getElementById("thankYouSection");
     const formSection = document.getElementById("formSection");
 
+    // Check if registration is open on load
+    if (!isRegistrationOpen()) {
+      formSection.innerHTML = `
+        <h2 class="title">🚫 Registration Closed</h2>
+        <p class="subtitle">The registration deadline for this event has passed.</p>
+        <a href="index.html" class="btn-primary" style="margin-top:20px; display:inline-block;">Back to Home</a>
+      `;
+    }
+
     form.addEventListener("submit", async (e) => {
       e.preventDefault();
+
+      if (!isRegistrationOpen()) {
+        msg.textContent = "⚠️ Registration has expired!";
+        msg.style.color = "red";
+        return;
+      }
 
       const name = document.getElementById("name").value.trim();
       const studentId = document.getElementById("studentId").value.trim();
@@ -93,7 +113,7 @@
       const bkashId = document.getElementById("bkashId").value.trim();
       const check = document.querySelector('input[name="check"]:checked')?.value || "";
 
-      const googleSheetScript = "https://corsproxy.io/?" + encodeURIComponent("https://script.google.com/macros/s/AKfycbwU6CyFjh6T5116ChaDu6X2vVw6g4JUo_irVVayrxJE-XOV25kL9Wz9ocAvKT2s_7rk/exec");
+      const googleSheetScript = "https://corsproxy.io/?" + encodeURIComponent(EVENT_CONFIG.googleSheetScriptUrl);
 
       const data = { name, studentId, email, q1, q2, q3, bkashId, check };
 

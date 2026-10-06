@@ -44,6 +44,38 @@ body.form-body {
     padding: 40px 20px;
 }
 
+/* NAV BAR */
+.nav-bar {
+    width: 100%;
+    max-width: 640px;
+    margin-bottom: 12px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.92rem;
+    padding: 8px 16px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    transition: all 0.2s ease;
+}
+
+.btn-back:hover {
+    color: var(--accent-hover);
+    border-color: var(--accent-border);
+    background: var(--accent-soft);
+    transform: translateX(-2px);
+}
+
 /* CONTAINER / CARD */
 .event-card,
 .form-container {

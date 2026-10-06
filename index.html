@@ -33,11 +33,12 @@
     </div>
 
     <div id="countdown" class="countdown-grid"></div>
-    <h3 class="countdown-label">Registration open till 9th November 10:00 PM</h3>
+    <h3 id="countdownLabel" class="countdown-label"></h3>
 
-    <a href="register.html" class="btn-register">Register Now</a>
-    <!-- <a class="btn-closed">Registration is Closed!</a> -->
-
+    <div id="actionBtnArea">
+      <a href="register.html" id="regBtn" class="btn-register">Register Now</a>
+      <a id="closedBtn" class="btn-closed" style="display:none;">Registration is Closed!</a>
+    </div>
 
     <section class="workshop-details">
       <h2>Workshop Details</h2>
@@ -87,13 +88,6 @@
         </ul>
       </div>
 
-      <!-- <div class="event-extra-info">
-        <p>📅 <strong>Date & Time:</strong> November 10, 4:00 PM - 8:00 PM</p>
-        <p>📍 <strong>Venue:</strong> Club Activity Room 4</p>
-        <p>🎉 <strong>Organized by:</strong> BRAC University Film Club</p>
-        <p>🔗 <strong>Event Page:</strong> <a href="https://www.facebook.com/share/1D5hWdJ5ZP/" target="_blank">Facebook Event Link</a></p>
-      </div> -->
-
     </section>
   </div>
 
@@ -101,9 +95,17 @@
     <p>© 2025 BUFC Workshop· Built for Workshop Registration</p>
   </footer>
 
+  <script src="config.js"></script>
   <script>
-    const eventDate = new Date("November 10, 2025 17:00:00").getTime();
+    const eventDate = new Date(EVENT_CONFIG.registrationDeadline).getTime();
     const countdownEl = document.getElementById("countdown");
+    const countdownLabelEl = document.getElementById("countdownLabel");
+    const regBtn = document.getElementById("regBtn");
+    const closedBtn = document.getElementById("closedBtn");
+
+    if (countdownLabelEl) {
+      countdownLabelEl.textContent = EVENT_CONFIG.deadlineLabel;
+    }
 
     function updateCountdown() {
       const now = new Date().getTime();
@@ -116,9 +118,12 @@
           <div class="count-box"><span>0</span><small>Minutes</small></div>
           <div class="count-box"><span>0</span><small>Seconds</small></div>
         `;
+        if (regBtn && closedBtn) {
+          regBtn.style.display = "none";
+          closedBtn.style.display = "inline-block";
+        }
         return;
       }
-
 
       const days = Math.floor(diff / (1000 * 60 * 60 * 24));
       const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
@@ -131,6 +136,11 @@
         <div class="count-box"><span>${mins}</span><small>Minutes</small></div>
         <div class="count-box"><span>${secs}</span><small>Seconds</small></div>
       `;
+
+      if (regBtn && closedBtn) {
+        regBtn.style.display = "inline-block";
+        closedBtn.style.display = "none";
+      }
     }
 
     updateCountdown();
